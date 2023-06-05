@@ -14,5 +14,5 @@ app.use("/auth", authRoute);
 
 // SERVER & DB
 app.listen(process.env.port, connectDb(), () =>
-  console.log(`Server Is Up on ${process.env.port}`)
+  console.log(`Server Is Up on ${process.env.PORT}`)
 );
