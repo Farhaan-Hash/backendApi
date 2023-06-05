@@ -13,6 +13,6 @@ app.use(cors());
 app.use("/auth", authRoute);
 
 // SERVER & DB
-app.listen(process.env.port, connectDb(), () =>
+app.listen(process.env.PORT, connectDb(), () =>
   console.log(`Server Is Up on ${process.env.PORT}`)
 );
