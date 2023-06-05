@@ -5,6 +5,7 @@ import dotenv from "dotenv/config";
 import cors from "cors";
 
 const app = express();
+const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
 app.use(cors());
@@ -13,6 +14,6 @@ app.use(cors());
 app.use("/auth", authRoute);
 
 // SERVER & DB
-app.listen(process.env.PORT, connectDb(), () =>
-  console.log(`Server Is Up on ${process.env.PORT}`)
+app.listen(`${PORT}`, connectDb(), () =>
+  console.log(`Server Is Up on ${PORT}`)
 );
