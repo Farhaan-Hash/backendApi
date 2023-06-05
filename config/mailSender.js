@@ -27,7 +27,7 @@ export const mailSender = async (data, mailType) => {
     const token = new Token({userid: data._id, token: verifyToken});
     await token.save(); //Save token to db
     const content = `<div><h1>Please Verify your mail by clicking this link</h1><br/>
-    <a href="http://localhost:3000/verify/${verifyToken}">Click Here</a></div>`;
+    <a href="https://authapifrontend.onrender.com/verify/${verifyToken}">Click Here</a></div>`;
 
     const mailOptions = {
       from: process.env.VERIFY_MAIL,
