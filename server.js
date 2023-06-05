@@ -5,14 +5,14 @@ import dotenv from "dotenv/config";
 import cors from "cors";
 
 const app = express();
-const port = process.env.PORT;
+
 app.use(express.json());
 app.use(cors());
 
 // Route
-app.use("/auth", authRoute, () => {
-  setHeader("Access-Control-Allow-Credentials", "true");
-});
+app.use("/auth", authRoute);
 
 // SERVER & DB
-app.listen(port, connectDb(), () => console.log(`Server Is Up on ${port}`));
+app.listen(process.env.port, connectDb(), () =>
+  console.log(`Server Is Up on ${process.env.port}`)
+);
