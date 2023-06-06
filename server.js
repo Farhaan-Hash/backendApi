@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(cors({origin: "*"}));
 
 // Route
-app.use("https://backend-api-seven.vercel.app/auth", authRoute);
+app.use("/auth", authRoute);
 
 // SERVER & DB
 app.listen(`${PORT}`, connectDb(), () =>

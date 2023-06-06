@@ -87,7 +87,7 @@ export const userData = async (req, res) => {
   }
 };
 
-// Update password
+// Update password-----------------------------------------
 
 export const updateUser = async (req, res) => {
   const {updateUser} = req.body;
@@ -118,7 +118,7 @@ export const updateUser = async (req, res) => {
   }
 };
 
-// After Verification of Email
+// After Verification of Email--------------------------------------
 export const verifyMail = async (req, res) => {
   try {
     const tokenDetail = await Token.findOne({token: req.body.token}); //token db userID
