@@ -38,7 +38,7 @@ export const mailSender = async (data, mailType) => {
     await token.save(); //Save token to db
 
     const content = `<div><h1>Please Verify your mail by clicking this link</h1><br/>
-    <a href="http://localhost:3000/verify/${verifyToken}">Click Here</a></div>`;
+    <a href="https://frontend-api-gamma.vercel.app/verify/${verifyToken}">Click Here</a></div>`;
 
     const mailOptions = {
       sender: {name: "Admin", email: process.env.VERIFY_MAIL},
