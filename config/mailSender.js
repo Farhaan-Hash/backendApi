@@ -8,12 +8,15 @@ export const mailSender = async (data, mailType) => {
 
     // create reusable transporter object using the default SMTP transport
     let mailConfig = nodemailer.createTransport({
-      host: "smtp-relay.sendinblue.com",
-      port: 587,
-      // secure: true, // true for 465, false for other ports
+      host: "smtp.gmail.com",
+      port: 465,
+      secure: true, // true for 465, false for other ports
       auth: {
         user: process.env.VERIFY_MAIL, // generated gmail user
         pass: process.env.VERIFY_PASSWORD, // generated gmail password
+      },
+      tls: {
+        ciphers: "SSLv3",
       },
     });
 
