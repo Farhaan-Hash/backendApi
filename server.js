@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(cors());
 
 // Route
-app.use("/auth", authRoute);
+app.use("/auth", authRoute, () => {});
 
 // SERVER & DB
 app.listen(`${PORT}`, connectDb(), () =>

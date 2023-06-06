@@ -6,6 +6,7 @@ import Token from "../Models/tokenModel.js";
 
 // Register User
 export const registerUser = async (req, res) => {
+  res.header("Access-Control-Allow-Origin", "true");
   const {user, email, password} = req.body;
 
   // check if  email already exists
@@ -42,6 +43,7 @@ export const registerUser = async (req, res) => {
 // -------------------------------LOGIN-------------------
 
 export const loginUser = async (req, res) => {
+  res.header("Access-Control-Allow-Origin", "true");
   const {email, password} = req.body;
   try {
     const user = await User.findOne({email});
@@ -80,6 +82,7 @@ export const loginUser = async (req, res) => {
 
 // Get Token Details-------------
 export const userData = async (req, res) => {
+  res.header("Access-Control-Allow-Origin", "true");
   try {
     res.status(200).send({success: true, data: req.body.user}); //data coming from authMiddleware after jwt verify
   } catch (error) {
@@ -90,6 +93,7 @@ export const userData = async (req, res) => {
 // Update password
 
 export const updateUser = async (req, res) => {
+  res.header("Access-Control-Allow-Origin", "true");
   const {updateUser} = req.body;
   const email = updateUser.email;
   const user = await User.findOne({email});
@@ -120,6 +124,8 @@ export const updateUser = async (req, res) => {
 
 // After Verification of Email
 export const verifyMail = async (req, res) => {
+  res.header("Access-Control-Allow-Origin", "true");
+
   try {
     const tokenDetail = await Token.findOne({token: req.body.token}); //token db userID
     if (tokenDetail) {
