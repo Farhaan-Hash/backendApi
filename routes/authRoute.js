@@ -13,7 +13,7 @@ const router = express.Router();
 // Register Route
 router.post("/register", registerUser);
 // Login Route
-router.post("/", loginUser);
+router.post("/login", loginUser);
 // JWT VERIFY
 router.get("/userdata", verifyToken, userData); //passing token to userData variable 2 functions\
 // password update
