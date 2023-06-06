@@ -15,9 +15,6 @@ export const mailSender = async (data, mailType) => {
         user: process.env.VERIFY_MAIL, // generated gmail user
         pass: process.env.VERIFY_PASSWORD, // generated gmail password
       },
-      tls: {
-        ciphers: "SSLv3",
-      },
     });
 
     // Token creation
